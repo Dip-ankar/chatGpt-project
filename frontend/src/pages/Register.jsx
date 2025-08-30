@@ -36,7 +36,6 @@ const Register = () => {
         })
 
         try {
-            // Placeholder: integrate real registration logic / API call.
 
         } catch (err) {
             console.error(err);
