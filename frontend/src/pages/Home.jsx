@@ -38,7 +38,7 @@ const Home = () => {
     if (!title) return;
 
     const response = await axios.post(
-      "https://project-01-chatGpt.onrender.com/api/chat",
+      "https://chatgpt-project-doa4.onrender.com/api/chat",
       { title },
       { withCredentials: true }
     );
@@ -51,7 +51,7 @@ const Home = () => {
   // 🆕 Fetch messages for a chat
   const getMessages = async (chatId) => {
     const response = await axios.get(
-      `https://project-01-chatGpt.onrender.com/api/chat/messages/${chatId}`,
+      `https://chatgpt-project-doa4.onrender.com/api/chat/messages/${chatId}`,
       { withCredentials: true }
     );
 
@@ -90,14 +90,14 @@ const Home = () => {
   // 🆕 Initial setup: fetch chats + connect socket
   useEffect(() => {
     axios
-      .get("https://project-01-chatGpt.onrender.com/api/chat", {
+      .get("https://chatgpt-project-doa4.onrender.com/api/chat", {
         withCredentials: true,
       })
       .then((response) => {
         dispatch(setChats(response.data.chats.reverse()));
       });
 
-    const tempSocket = io("https://project-01-chatGpt.onrender.com", {
+    const tempSocket = io("https://chatgpt-project-doa4.onrender.com", {
       withCredentials: true,
     });
 
